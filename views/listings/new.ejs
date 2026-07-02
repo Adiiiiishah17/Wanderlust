@@ -1,0 +1,122 @@
+<% layout("/layouts/boilerplate") -%>
+
+<body>
+    <h1>Fill the details to add new</h1>
+    <!-- <form action="/listings" method="post">
+        <input type="text" name="title" placeholder="enter title"> <br>
+        <textarea name="description" placeholder="enter description" rows="10" cols="20"></textarea> <br>
+        <input type="text" name="price" placeholder="enter price"> <br>
+        <input type="text" name="image" placeholder="enter url"> <br>
+        <input type="text" name="location" placeholder="enter location"> <br>
+        <input type="text" name="country" placeholder="enter country">
+        <br> 
+        <button>Save</button>
+    </form> -->
+
+ <div class="container col-md-6 mt-5">
+
+  <div class="card shadow p-4">
+    
+    <h2 class="text-center mb-4">Create New Listing</h2>
+
+    <form action="/listings" method="post" novalidate class="needs-validation" needs-validation enctype="multipart/form-data">
+
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          name="title"
+          placeholder="e.g. Luxury Beach House"
+          required
+        >
+        <div class="valid-feedback">that looks great</div>
+        <div class="invalid-feedback">sahi daal bhai</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          class="form-control"
+          id="description"
+          name="description"
+          rows="4"
+          placeholder="Describe your property..."
+          required
+        ></textarea>
+      </div>
+
+      <!-- <div class="mb-3">
+        <label for="image" class="form-label">Image URL</label>
+        <input
+          type="text"
+          class="form-control"
+          id="image"
+          name="image"
+          placeholder="https://example.com/image.jpg"
+        >
+      </div> -->
+
+      <div class="mb-3">
+        <label for="image" class="form-label">Upload Image</label>
+        <input
+          type="file"
+          class="form-control"
+          id="image"
+          name="image"
+          placeholder="upload here" 
+          required
+        >
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-6 mb-3">
+          <label for="price" class="form-label">Price (₹)</label>
+          <input
+            type="number"
+            class="form-control"
+            id="price"
+            name="price"
+            placeholder="5000"
+            required
+          >
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label for="country" class="form-label">Country</label>
+          <input
+            type="text"
+            class="form-control"
+            id="country"
+            name="country"
+            placeholder="India"
+            required
+          >
+        </div>
+
+      </div>
+
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input
+          type="text"
+          class="form-control"
+          id="location"
+          name="location"
+          placeholder="Jaipur, Rajasthan"
+          required
+        >
+      </div>
+
+      <button type="submit" class="btn btn-dark w-100">
+        Create Listing
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+</body>

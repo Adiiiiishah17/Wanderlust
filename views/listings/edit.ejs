@@ -1,0 +1,93 @@
+<% layout("/layouts/boilerplate") -%>
+<body>
+  <div class="container col-md-6 mt-5">
+
+    <div class="card shadow p-4">
+
+        <h2 class="text-center mb-4">Edit Listing</h2>
+
+        <form action="/listings/<%= list._id %>?_method=PUT" method="post" enctype="multipart/form-data">
+
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="title"
+                    name="title"
+                    value="<%= list.title %>"
+                >
+            </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea
+                    class="form-control"
+                    id="description"
+                    name="description"
+                    rows="4"
+                ><%= list.description %></textarea>
+            </div>
+
+            <div class="mb-3">
+                Original Listing Image
+           <img src="<%= list.image.url %>" alt="">
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Upload new image</label>
+                <input
+                    type="file"
+                    class="form-control"
+                    id="image"
+                    name="image"
+                >
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input
+                        type="number"
+                        class="form-control"
+                        id="price"
+                        name="price"
+                        value="<%= list.price %>"
+                    >
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="country" class="form-label">Country</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="country"
+                        name="country"
+                        value="<%= list.country %>"
+                    >
+                </div>
+
+            </div>
+
+            <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="location"
+                    name="location"
+                    value="<%= list.location %>"
+                >
+            </div>
+
+            <button type="submit" class="btn btn-warning w-100">
+                Update Listing
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
